@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>توصل سريع - لوحة متجر</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}body{font-family:Segoe UI,Tahoma,Arial,sans-serif;background:#f5f5f5;padding-bottom:120px;direction:rtl}
-    .header{color:#fff;padding:0;text-align:center;position:sticky;top:0;z-index:100;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-size:cover;background-position:center;background-repeat:no-repeat;overflow:hidden}.nav{display:flex;gap:10px;padding:10px;overflow:auto;background:#fff;border-bottom:1px solid #ddd}
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:Segoe UI,Tahoma,Arial,sans-serif;background:#f5f5f5;padding-bottom:120px;padding-top:80px;direction:rtl}
+    .header{color:#fff;padding:0;text-align:center;position:fixed;top:0;left:0;right:0;z-index:100;min-height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-size:cover;background-position:center;background-repeat:no-repeat;overflow:hidden}.nav{display:flex;gap:10px;padding:10px;overflow:auto;background:#fff;border-bottom:1px solid #ddd}
     .nav-btn{padding:8px 14px;border-radius:20px;border:0;background:#ecf0f1;color:#333;cursor:pointer}
     .nav-btn.active{background:#e74c3c;color:#fff}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
     .product-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;flex-direction:column}
@@ -35,7 +35,7 @@
 <body>
 
   <div id="storeView">
-    <div class="header" id="storeHeader" style="background-color:#e74c3c"><h1>       </h1><div id="storeSubtitle" style="font-size:12px;opacity:.9;text-shadow:0 1px 3px rgba(0,0,0,.6)">  </div></div>
+    <div class="header" id="storeHeader" style="background-color:#e74c3c"><h1>🍽️ مطعم ابو يزن  :</h1><div id="storeSubtitle" style="font-size:12px;opacity:.9;text-shadow:0 1px 3px rgba(0,0,0,.6)">أطلب الآن عبر الواتساب</div></div>
 
     <div class="store-info">
       <h2 id="storeName">متجر الطعام</h2>
@@ -724,7 +724,8 @@ const defaultProducts = [
 const defaultStore = {
     "name": "خدمة التوصيل من ساعة 10:00صباح حتا الساعة 12:00مساءا",
     "desc": "أشهى المأكولات - توصيل سريع",
-    "whatsapp": "963981738986"
+    "whatsapp": "963981738986",
+    "headerImage": ""
 };
 
 /* ======= حالة التطبيق ======= */
@@ -753,8 +754,7 @@ function loadData(){
   const savedCart = localStorage.getItem('shop_cart_v1');
   cart = savedCart ? JSON.parse(savedCart) : [];
   updateStoreDisplay();
-  const savedHeader = localStorage.getItem('shop_header_image_v1');
-  if(savedHeader) applyHeaderImage(savedHeader);
+  if(storeSettings.headerImage) applyHeaderImage(storeSettings.headerImage);
 }
 
 /* ======= واجهة المتجر ======= */
@@ -898,15 +898,15 @@ function applyHeaderImage(base64){
 }
 function saveHeaderImage(){
   if(currentHeaderImageBase64){
-    localStorage.setItem('shop_header_image_v1', currentHeaderImageBase64);
+    storeSettings.headerImage = currentHeaderImageBase64;
     applyHeaderImage(currentHeaderImageBase64);
-    showToast('✅ تم حفظ صورة الهيدر');
+    showToast('✅ تم حفظ صورة الهيدر في الإعدادات');
   } else {
     showToast('⚠️ اختر صورة أولاً');
   }
 }
 function removeHeaderImage(){
-  localStorage.removeItem('shop_header_image_v1');
+  storeSettings.headerImage = '';
   currentHeaderImageBase64 = null;
   document.getElementById('headerImageFile').value = '';
   document.getElementById('headerImagePreview').style.display = 'none';
@@ -989,6 +989,10 @@ function renderAdminProducts(){
 function saveStoreSettings(){ storeSettings.name = document.getElementById('adminStoreName').value.trim() || storeSettings.name; storeSettings.desc = document.getElementById('adminStoreDesc').value.trim() || storeSettings.desc; storeSettings.whatsapp = document.getElementById('adminWhatsapp').value.replace(/[^0-9]/g,'') || storeSettings.whatsapp; updateStoreDisplay(); showToast('✅ تم تحديث الإعدادات مؤقتاً'); }
 
 /* ======= حماية الدخول ======= */
+function showStore(){
+  document.getElementById('storeView').style.display = 'block';
+  document.getElementById('adminPanel').style.display = 'none';
+}
 function showAdmin(){ document.getElementById('passwordInput').value=''; document.getElementById('passwordError').style.display='none'; document.getElementById('passwordModal').style.display='flex'; setTimeout(()=>document.getElementById('passwordInput').focus(),120); }
 function checkPassword(){ const v = document.getElementById('passwordInput').value; if(v===ADMIN_PASSWORD){ document.getElementById('passwordModal').style.display='none'; document.getElementById('storeView').style.display='none'; document.getElementById('adminPanel').style.display='block'; renderAdminProducts(); } else { document.getElementById('passwordError').style.display='block'; } }
 function closePasswordModal(){ document.getElementById('passwordModal').style.display='none'; }
@@ -1114,4 +1118,4 @@ window.addEventListener('load', init);
 </script>
 
 </body>
-  </html>
+        </html>
