@@ -29,7 +29,7 @@
     .qty-btn{width:32px;height:32px;border-radius:6px;border:0;background:#ecf0f1;cursor:pointer}
     .file-label{display:inline-block;padding:10px;background:#ecf0f1;border-radius:8px;border:2px dashed #bdc3c7;cursor:pointer;color:#7f8c8d}
     .img-preview{width:90px;height:90px;object-fit:cover;border-radius:8px;border:2px dashed #ddd;display:block;margin-top:8px}
-    @media(min-width:768px){.products{grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto}}
+    @media(orientation:portrait){.products{grid-template-columns:repeat(3,1fr)}}@media(orientation:landscape) and (min-width:768px){.products{grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto}}
   </style>
 </head>
 <body>
