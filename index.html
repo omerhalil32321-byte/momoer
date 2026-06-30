@@ -156,118 +156,678 @@
 /* ======= بيانات افتراضية ======= */
 const ADMIN_PASSWORD = "085085";
 const defaultProducts = [
-    // ========== MAIN DISHES (وجبات رئيسية) ==========
-    {"id": 16, "name": "وجبة كرسبي", "desc": "تقدم مع بطاطا", "price": 1500, "category": "main", "image": "https://images.unsplash.com/photo-1562967914-608f8260eb20?w=400&h=300&fit=crop"},
-    {"id": 1, "name": "شاورما دجاج", "desc": "شاورما دجاج مع ثومية وخضار", "price": 2500, "category": "main", "image": "https://images.unsplash.com/photo-1553909489-cd47e3b4430f?w=400&h=300&fit=crop"},
-    {"id": 2, "name": "شاورما لحمة", "desc": "شاورما لحمة غنم مع ثومية", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1553909489-cd47e3b4430f?w=400&h=300&fit=crop"},
-    {"id": 3, "name": "كباب مشوي", "desc": "كباب لحمة مشوي على الفحم", "price": 4500, "category": "main", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"},
-    {"id": 4, "name": "كفتة مشوية", "desc": "كفتة لحمة مشوية مع طماطم", "price": 4000, "category": "main", "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=300&fit=crop"},
-    {"id": 5, "name": "دجاج مشوي", "desc": "نصف دجاجة مشوية على الفحم", "price": 5000, "category": "main", "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop"},
-    {"id": 6, "name": "دجاج مسحب", "desc": "دجاج مسحب مقلي مع بطاطا", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop"},
-    {"id": 7, "name": "برجر لحمة", "desc": "برجر لحمة مع جبنة وخضار", "price": 3000, "category": "main", "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop"},
-    {"id": 8, "name": "برجر دجاج", "desc": "برجر دجاج مقلي مع مايونيز", "price": 2500, "category": "main", "image": "https://images.unsplash.com/photo-1606755962773-d324e0a8a1f8?w=400&h=300&fit=crop"},
-    {"id": 9, "name": "بيتزا مارغريتا", "desc": "بيتزا جبنة وطماطم وريحان", "price": 4000, "category": "main", "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop"},
-    {"id": 10, "name": "بيتزا ببروني", "desc": "بيتزا ببروني حار مع جبنة", "price": 5000, "category": "main", "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop"},
-    {"id": 11, "name": "بيتزا خضار", "desc": "بيتزا فلفل، زيتون، طماطم", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop"},
-    {"id": 12, "name": "مندي دجاج", "desc": "أرز مندي مع دجاج مشوي", "price": 5500, "category": "main", "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop"},
-    {"id": 13, "name": "كبسة دجاج", "desc": "أرز كبسة مع دجاج وبهارات", "price": 5000, "category": "main", "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop"},
-    {"id": 14, "name": "مقلوبة", "desc": "أرز مقلوبة مع باذنجان ولحمة", "price": 4500, "category": "main", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 15, "name": "فتة شامية", "desc": "فتة باللحمة والطحينة والخبز", "price": 4000, "category": "main", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 17, "name": "سجق مشوي", "desc": "سجق لحمة مشوي مع فلفل", "price": 3000, "category": "main", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"},
-    {"id": 18, "name": "تشكن ستربس", "desc": "أصابع دجاج مقلية مع صوص", "price": 2800, "category": "main", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop"},
-    {"id": 19, "name": "سمك مشوي", "desc": "سمك مشوي على الفحم مع ليمون", "price": 6000, "category": "main", "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop"},
-    {"id": 20, "name": "سمك مقلي", "desc": "سمك مقلي مع بطاطا وسلطة", "price": 5500, "category": "main", "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=400&h=300&fit=crop"},
-    {"id": 21, "name": "ريزو دجاج", "desc": "أرز بالكريمة مع دجاج", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop"},
-    {"id": 22, "name": "سباغيتي بولونيز", "desc": "معكرونة بصلصة اللحمة", "price": 3000, "category": "main", "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop"},
-    {"id": 23, "name": "سباغيتي ألفريدو", "desc": "معكرونة بصلصة الكريمة", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1645112411341-6c4fd0cb7b6f?w=400&h=300&fit=crop"},
-    {"id": 24, "name": "لازانيا", "desc": "لازانيا باللحمة والجبنة", "price": 4000, "category": "main", "image": "https://images.unsplash.com/photo-1574868235872-c660ed7ce111?w=400&h=300&fit=crop"},
-    {"id": 25, "name": "ستيك لحمة", "desc": "ستيك لحمة مشوي مع خضار", "price": 7000, "category": "main", "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop"},
-    {"id": 26, "name": "تشكن بيكاتا", "desc": "دجاج بيكاتا بالكريمة والفطر", "price": 4500, "category": "main", "image": "https://images.unsplash.com/photo-1604908176997-125f25cc90ee?w=400&h=300&fit=crop"},
-    {"id": 27, "name": "شيش طاووق", "desc": "دجاج شيش طاووق مشوي", "price": 4000, "category": "main", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"},
-    {"id": 28, "name": "محاشي مشكلة", "desc": "ورق عنب، كوسا، باذنجان", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 29, "name": "مسقعة", "desc": "مسقعة باذنجان مع لحمة", "price": 3000, "category": "main", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 30, "name": "كباب دجاج", "desc": "كباب دجاج مشوي مع خضار", "price": 3500, "category": "main", "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"},
-
-    // ========== APPETIZERS (مقبلات) ==========
-    {"id": 31, "name": "حمص", "desc": "حمص ناعم مع زيت زيتون", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?w=400&h=300&fit=crop"},
-    {"id": 32, "name": "متبل باذنجان", "desc": "متبل باذنجان مشوي مع طحينة", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1600336153113-d62c0af02ff9?w=400&h=300&fit=crop"},
-    {"id": 33, "name": "بابا غنوج", "desc": "بابا غنوج بالطماطم والبصل", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1600336153113-d62c0af02ff9?w=400&h=300&fit=crop"},
-    {"id": 34, "name": "فتوش", "desc": "سلطة فتوش بالسماق والخبز المحمص", "price": 1200, "category": "appetizer", "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop"},
-    {"id": 35, "name": "تبولة", "desc": "سلطة تبولة بالبقدونس والبرغل", "price": 1200, "category": "appetizer", "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop"},
-    {"id": 36, "name": "سلطة يونانية", "desc": "سلطة يونانية بالجبنة الفيتا", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop"},
-    {"id": 37, "name": "سلطة سيزر", "desc": "سلطة سيزر مع دجاج مشوي", "price": 2000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop"},
-    {"id": 38, "name": "فلافل", "desc": "فلافل مقلي مع طحينة", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1541151040331-7e8f842633ce?w=400&h=300&fit=crop"},
-    {"id": 39, "name": "سمبوسك جبنة", "desc": "سمبوسك جبنة مقلي", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop"},
-    {"id": 40, "name": "سمبوسك لحمة", "desc": "سمبوسك لحمة مقلي", "price": 1800, "category": "appetizer", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop"},
-    {"id": 41, "name": "بطاطا مقلي", "desc": "بطاطا مقلي مقرمش", "price": 1000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1573080496219-b560104f4d8a?w=400&h=300&fit=crop"},
-    {"id": 42, "name": "بطاطا ويدجز", "desc": "بطاطا ويدجز بالأعشاب", "price": 1200, "category": "appetizer", "image": "https://images.unsplash.com/photo-1573080496219-b560104f4d8a?w=400&h=300&fit=crop"},
-    {"id": 43, "name": "أونيون رينجز", "desc": "حلقات بصل مقلية", "price": 1000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&h=300&fit=crop"},
-    {"id": 44, "name": "ناجتس دجاج", "desc": "ناجتس دجاج مقلي", "price": 1800, "category": "appetizer", "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop"},
-    {"id": 45, "name": "موزاريلا ستيكس", "desc": "أصابع موزاريلا مقلية", "price": 2000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1541696490865-944845034e4b?w=400&h=300&fit=crop"},
-    {"id": 46, "name": "حلومي مشوي", "desc": "جبنة حلومي مشوية", "price": 2500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&h=300&fit=crop"},
-    {"id": 47, "name": "محمرة", "desc": "محمرة فلفل حمراء وجوز", "price": 1500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1600336153113-d62c0af02ff9?w=400&h=300&fit=crop"},
-    {"id": 48, "name": "كبة نية", "desc": "كبة لحمة نية مع بصل", "price": 3000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=300&fit=crop"},
-    {"id": 49, "name": "كبة مقلية", "desc": "كبة لحمة مقلية", "price": 2500, "category": "appetizer", "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=300&fit=crop"},
-    {"id": 50, "name": "ورق عنب", "desc": "ورق عنب بالزيت والليمون", "price": 2000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 51, "name": "لبنة", "desc": "لبنة بالزيت والزعتر", "price": 1200, "category": "appetizer", "image": "https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?w=400&h=300&fit=crop"},
-    {"id": 52, "name": "زيتون مشكلة", "desc": "زيتون أسود وأخضر", "price": 1000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1599020792689-9fde458e7e17?w=400&h=300&fit=crop"},
-    {"id": 53, "name": "مخلل مشكلة", "desc": "مخلل خيار وفلفل وثوم", "price": 800, "category": "appetizer", "image": "https://images.unsplash.com/photo-1569594016133-74d964903a47?w=400&h=300&fit=crop"},
-    {"id": 54, "name": "شوربة عدس", "desc": "شوربة عدس حارة", "price": 1000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop"},
-    {"id": 55, "name": "شوربة خضار", "desc": "شوربة خضار مشكلة", "price": 1000, "category": "appetizer", "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop"},
-
-    // ========== DRINKS (مشروبات) ==========
-    {"id": 56, "name": "كولا", "desc": "كولا بارد", "price": 500, "category": "drink", "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=300&fit=crop"},
-    {"id": 57, "name": "سفن أب", "desc": "سفن أب بارد", "price": 500, "category": "drink", "image": "https://images.unsplash.com/photo-1625772299848-863b6e92f0ca?w=400&h=300&fit=crop"},
-    {"id": 58, "name": "ميرندا برتقال", "desc": "ميرندا برتقال بارد", "price": 500, "category": "drink", "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&h=300&fit=crop"},
-    {"id": 59, "name": "عصير برتقال طازج", "desc": "عصير برتقال طازج", "price": 1000, "category": "drink", "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&h=300&fit=crop"},
-    {"id": 60, "name": "عصير ليمون", "desc": "عصير ليمون طازج", "price": 800, "category": "drink", "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&h=300&fit=crop"},
-    {"id": 61, "name": "عصير مانجو", "desc": "عصير مانجو طازج", "price": 1000, "category": "drink", "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=300&fit=crop"},
-    {"id": 62, "name": "عصير فراولة", "desc": "عصير فراولة طازج", "price": 1000, "category": "drink", "image": "https://images.unsplash.com/photo-1506802913710-40e2e702a90f?w=400&h=300&fit=crop"},
-    {"id": 63, "name": "عصير أفوكادو", "desc": "عصير أفوكادو بالحليب", "price": 1500, "category": "drink", "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=300&fit=crop"},
-    {"id": 64, "name": "عصير كوكتيل", "desc": "عصير فواكه مشكلة", "price": 1200, "category": "drink", "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop"},
-    {"id": 65, "name": "ماء", "desc": "ماء معدني بارد", "price": 300, "category": "drink", "image": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&h=300&fit=crop"},
-    {"id": 66, "name": "شاي", "desc": "شاي ساخن بالنعناع", "price": 500, "category": "drink", "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop"},
-    {"id": 67, "name": "قهوة تركية", "desc": "قهوة تركية ساخنة", "price": 800, "category": "drink", "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop"},
-    {"id": 68, "name": "قهوة أمريكية", "desc": "قهوة أمريكية ساخنة", "price": 1000, "category": "drink", "image": "https://images.unsplash.com/photo-1497515114889-1c6a5e7fd0c0?w=400&h=300&fit=crop"},
-    {"id": 69, "name": "كابتشينو", "desc": "كابتشينو بالحليب", "price": 1200, "category": "drink", "image": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop"},
-    {"id": 70, "name": "لاتيه", "desc": "لاتيه بالحليب", "price": 1200, "category": "drink", "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop"},
-    {"id": 71, "name": "ميلك شيك فراولة", "desc": "ميلك شيك فراولة", "price": 1500, "category": "drink", "image": "https://images.unsplash.com/photo-1579954115563-e72bf1381629?w=400&h=300&fit=crop"},
-    {"id": 72, "name": "ميلك شيك شوكولاتة", "desc": "ميلك شيك شوكولاتة", "price": 1500, "category": "drink", "image": "https://images.unsplash.com/photo-1572490122747-3968b75a3bfc?w=400&h=300&fit=crop"},
-    {"id": 73, "name": "ميلك شيك فانيليا", "desc": "ميلك شيك فانيليا", "price": 1500, "category": "drink", "image": "https://images.unsplash.com/photo-1579954115563-e72bf1381629?w=400&h=300&fit=crop"},
-    {"id": 74, "name": "عصير جزر", "desc": "عصير جزر طازج", "price": 800, "category": "drink", "image": "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=400&h=300&fit=crop"},
-    {"id": 75, "name": "عصير تفاح", "desc": "عصير تفاح طازج", "price": 1000, "category": "drink", "image": "https://images.unsplash.com/photo-1600271886742-f552cd2bc414?w=400&h=300&fit=crop"},
-    {"id": 76, "name": "سحلب", "desc": "سحلب ساخن بالمكسرات", "price": 1200, "category": "drink", "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop"},
-    {"id": 77, "name": "سموذي توت", "desc": "سموذي توت أحمر", "price": 1500, "category": "drink", "image": "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?w=400&h=300&fit=crop"},
-    {"id": 78, "name": "سموذي مانجو", "desc": "سموذي مانجو بالحليب", "price": 1500, "category": "drink", "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=300&fit=crop"},
-    {"id": 79, "name": "عصير عنب", "desc": "عصير عنب طازج", "price": 1000, "category": "drink", "image": "https://images.unsplash.com/photo-1537640538965-1756cd5807e6?w=400&h=300&fit=crop"},
-    {"id": 80, "name": "عصير بطيخ", "desc": "عصير بطيخ طازج", "price": 800, "category": "drink", "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=300&fit=crop"},
-
-    // ========== DESSERTS (حلويات) ==========
-    {"id": 81, "name": "كنافة نابلسية", "desc": "كنافة بالجبنة والقطر", "price": 2500, "category": "dessert", "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"},
-    {"id": 82, "name": "بقلاوة", "desc": "بقلاوة بالفستق والقطر", "price": 2000, "category": "dessert", "image": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=400&h=300&fit=crop"},
-    {"id": 83, "name": "قطايف", "desc": "قطايف بالجبنة أو جوز", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 84, "name": "مهلبية", "desc": "مهلبية بالحليب والمكسرات", "price": 1000, "category": "dessert", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"},
-    {"id": 85, "name": "رز بحليب", "desc": "رز بحليب بالقرفة", "price": 1000, "category": "dessert", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"},
-    {"id": 86, "name": "أم علي", "desc": "أم علي بالحليب والخبز", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"},
-    {"id": 87, "name": "كيك شوكولاتة", "desc": "كيك شوكولاتة بالصوص", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop"},
-    {"id": 88, "name": "تشيز كيك", "desc": "تشيز كيك بالفراولة", "price": 2000, "category": "dessert", "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&h=300&fit=crop"},
-    {"id": 89, "name": "تيراميسو", "desc": "تيراميسو إيطالي", "price": 2500, "category": "dessert", "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"},
-    {"id": 90, "name": "كريم كراميل", "desc": "كريم كراميل بالفانيليا", "price": 1200, "category": "dessert", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"},
-    {"id": 91, "name": "آيس كريم فانيليا", "desc": "آيس كريم فانيليا", "price": 800, "category": "dessert", "image": "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=400&h=300&fit=crop"},
-    {"id": 92, "name": "آيس كريم شوكولاتة", "desc": "آيس كريم شوكولاتة", "price": 800, "category": "dessert", "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop"},
-    {"id": 93, "name": "آيس كريم فراولة", "desc": "آيس كريم فراولة", "price": 800, "category": "dessert", "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop"},
-    {"id": 94, "name": "سندويش آيس كريم", "desc": "سندويش آيس كريم", "price": 1000, "category": "dessert", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"},
-    {"id": 95, "name": "كريب نوتيلا", "desc": "كريب بالنوتيلا والموز", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"},
-    {"id": 96, "name": "كريب فراولة", "desc": "كريب بالفراولة والشوكولاتة", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=300&fit=crop"},
-    {"id": 97, "name": "بسبوسة", "desc": "بسبوسة بالقطر والمكسرات", "price": 1000, "category": "dessert", "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"},
-    {"id": 98, "name": "معمول", "desc": "معمول بالتمر أو الجوز", "price": 1200, "category": "dessert", "image": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=400&h=300&fit=crop"},
-    {"id": 99, "name": "غريبة", "desc": "غريبة بالفستق", "price": 1000, "category": "dessert", "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"},
-    {"id": 100, "name": "حلوى الجبن", "desc": "حلوى الجبن بالقطر", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"},
-    {"id": 101, "name": "فطيرة تفاح", "desc": "فطيرة تفاح بالقرفة", "price": 1500, "category": "dessert", "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400&h=300&fit=crop"},
-    {"id": 102, "name": "بودينغ شوكولاتة", "desc": "بودينغ شوكولاتة", "price": 1000, "category": "dessert", "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop"},
-    {"id": 103, "name": "جيلي فواكه", "desc": "جيلي فواكه مشكلة", "price": 800, "category": "dessert", "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop"},
-    {"id": 104, "name": "كنافة بالقشطة", "desc": "كنافة بالقشطة والقطر", "price": 2500, "category": "dessert", "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"},
-    {"id": 105, "name": "موس شوكولاتة", "desc": "موس شوكولاتة فرنسي", "price": 1800, "category": "dessert", "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"}
+    {
+        "id": 3,
+        "name": "كباب مشوي",
+        "desc": "كباب لحمة مشوي على الفحم",
+        "price": 4500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 4,
+        "name": "كفتة مشوية",
+        "desc": "كفتة لحمة مشوية مع طماطم",
+        "price": 4000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 5,
+        "name": "دجاج مشوي",
+        "desc": "نصف دجاجة مشوية على الفحم",
+        "price": 5000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 6,
+        "name": "دجاج مسحب",
+        "desc": "دجاج مسحب مقلي مع بطاطا",
+        "price": 3500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 7,
+        "name": "برجر لحمة",
+        "desc": "برجر لحمة مع جبنة وخضار",
+        "price": 3000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 9,
+        "name": "بيتزا مارغريتا",
+        "desc": "بيتزا جبنة وطماطم وريحان",
+        "price": 4000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 10,
+        "name": "بيتزا ببروني",
+        "desc": "بيتزا ببروني حار مع جبنة",
+        "price": 5000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 11,
+        "name": "بيتزا خضار",
+        "desc": "بيتزا فلفل، زيتون، طماطم",
+        "price": 3500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 12,
+        "name": "مندي دجاج",
+        "desc": "أرز مندي مع دجاج مشوي",
+        "price": 5500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 13,
+        "name": "كبسة دجاج",
+        "desc": "أرز كبسة مع دجاج وبهارات",
+        "price": 5000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 14,
+        "name": "مقلوبة",
+        "desc": "أرز مقلوبة مع باذنجان ولحمة",
+        "price": 4500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 15,
+        "name": "فتة شامية",
+        "desc": "فتة باللحمة والطحينة والخبز",
+        "price": 4000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 17,
+        "name": "سجق مشوي",
+        "desc": "سجق لحمة مشوي مع فلفل",
+        "price": 3000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 18,
+        "name": "تشكن ستربس",
+        "desc": "أصابع دجاج مقلية مع صوص",
+        "price": 2800,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 19,
+        "name": "سمك مشوي",
+        "desc": "سمك مشوي على الفحم مع ليمون",
+        "price": 6000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 20,
+        "name": "سمك مقلي",
+        "desc": "سمك مقلي مع بطاطا وسلطة",
+        "price": 5500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 21,
+        "name": "ريزو دجاج",
+        "desc": "أرز بالكريمة مع دجاج",
+        "price": 3500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 22,
+        "name": "سباغيتي بولونيز",
+        "desc": "معكرونة بصلصة اللحمة",
+        "price": 3000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 25,
+        "name": "ستيك لحمة",
+        "desc": "ستيك لحمة مشوي مع خضار",
+        "price": 7000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 27,
+        "name": "شيش طاووق",
+        "desc": "دجاج شيش طاووق مشوي",
+        "price": 4000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 28,
+        "name": "محاشي مشكلة",
+        "desc": "ورق عنب، كوسا، باذنجان",
+        "price": 3500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 29,
+        "name": "مسقعة",
+        "desc": "مسقعة باذنجان مع لحمة",
+        "price": 3000,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 30,
+        "name": "كباب دجاج",
+        "desc": "كباب دجاج مشوي مع خضار",
+        "price": 3500,
+        "category": "main",
+        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 31,
+        "name": "حمص",
+        "desc": "حمص ناعم مع زيت زيتون",
+        "price": 1500,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 34,
+        "name": "فتوش",
+        "desc": "سلطة فتوش بالسماق والخبز المحمص",
+        "price": 1200,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 35,
+        "name": "تبولة",
+        "desc": "سلطة تبولة بالبقدونس والبرغل",
+        "price": 1200,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 36,
+        "name": "سلطة يونانية",
+        "desc": "سلطة يونانية بالجبنة الفيتا",
+        "price": 1500,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 37,
+        "name": "سلطة سيزر",
+        "desc": "سلطة سيزر مع دجاج مشوي",
+        "price": 2000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 39,
+        "name": "سمبوسك جبنة",
+        "desc": "سمبوسك جبنة مقلي",
+        "price": 1500,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 40,
+        "name": "سمبوسك لحمة",
+        "desc": "سمبوسك لحمة مقلي",
+        "price": 1800,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 43,
+        "name": "أونيون رينجز",
+        "desc": "حلقات بصل مقلية",
+        "price": 1000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 44,
+        "name": "ناجتس دجاج",
+        "desc": "ناجتس دجاج مقلي",
+        "price": 1800,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 46,
+        "name": "حلومي مشوي",
+        "desc": "جبنة حلومي مشوية",
+        "price": 2500,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 48,
+        "name": "كبة نية",
+        "desc": "كبة لحمة نية مع بصل",
+        "price": 3000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 49,
+        "name": "كبة مقلية",
+        "desc": "كبة لحمة مقلية",
+        "price": 2500,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 50,
+        "name": "ورق عنب",
+        "desc": "ورق عنب بالزيت والليمون",
+        "price": 2000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 51,
+        "name": "لبنة",
+        "desc": "لبنة بالزيت والزعتر",
+        "price": 1200,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 52,
+        "name": "زيتون مشكلة",
+        "desc": "زيتون أسود وأخضر",
+        "price": 1000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1599020792689-9fde458e7e17?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 54,
+        "name": "شوربة عدس",
+        "desc": "شوربة عدس حارة",
+        "price": 1000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 55,
+        "name": "شوربة خضار",
+        "desc": "شوربة خضار مشكلة",
+        "price": 1000,
+        "category": "appetizer",
+        "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 56,
+        "name": "كولا",
+        "desc": "كولا بارد",
+        "price": 500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 58,
+        "name": "ميرندا برتقال",
+        "desc": "ميرندا برتقال بارد",
+        "price": 500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 59,
+        "name": "عصير برتقال طازج",
+        "desc": "عصير برتقال طازج",
+        "price": 1000,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 60,
+        "name": "عصير ليمون",
+        "desc": "عصير ليمون طازج",
+        "price": 800,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 61,
+        "name": "عصير مانجو",
+        "desc": "عصير مانجو طازج",
+        "price": 1000,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 63,
+        "name": "عصير أفوكادو",
+        "desc": "عصير أفوكادو بالحليب",
+        "price": 1500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 64,
+        "name": "عصير كوكتيل",
+        "desc": "عصير فواكه مشكلة",
+        "price": 1200,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 65,
+        "name": "ماء",
+        "desc": "ماء معدني بارد",
+        "price": 300,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 66,
+        "name": "شاي",
+        "desc": "شاي ساخن بالنعناع",
+        "price": 500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 67,
+        "name": "قهوة تركية",
+        "desc": "قهوة تركية ساخنة",
+        "price": 800,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 69,
+        "name": "كابتشينو",
+        "desc": "كابتشينو بالحليب",
+        "price": 1200,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 70,
+        "name": "لاتيه",
+        "desc": "لاتيه بالحليب",
+        "price": 1200,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 71,
+        "name": "ميلك شيك فراولة",
+        "desc": "ميلك شيك فراولة",
+        "price": 1500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1579954115563-e72bf1381629?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 73,
+        "name": "ميلك شيك فانيليا",
+        "desc": "ميلك شيك فانيليا",
+        "price": 1500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1579954115563-e72bf1381629?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 74,
+        "name": "عصير جزر",
+        "desc": "عصير جزر طازج",
+        "price": 800,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 76,
+        "name": "سحلب",
+        "desc": "سحلب ساخن بالمكسرات",
+        "price": 1200,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 77,
+        "name": "سموذي توت",
+        "desc": "سموذي توت أحمر",
+        "price": 1500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1553530979-7ee52a2670c4?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 78,
+        "name": "سموذي مانجو",
+        "desc": "سموذي مانجو بالحليب",
+        "price": 1500,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 80,
+        "name": "عصير بطيخ",
+        "desc": "عصير بطيخ طازج",
+        "price": 800,
+        "category": "drink",
+        "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 81,
+        "name": "كنافة نابلسية",
+        "desc": "كنافة بالجبنة والقطر",
+        "price": 2500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 82,
+        "name": "بقلاوة",
+        "desc": "بقلاوة بالفستق والقطر",
+        "price": 2000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 83,
+        "name": "قطايف",
+        "desc": "قطايف بالجبنة أو جوز",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 84,
+        "name": "مهلبية",
+        "desc": "مهلبية بالحليب والمكسرات",
+        "price": 1000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 85,
+        "name": "رز بحليب",
+        "desc": "رز بحليب بالقرفة",
+        "price": 1000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 86,
+        "name": "أم علي",
+        "desc": "أم علي بالحليب والخبز",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 87,
+        "name": "كيك شوكولاتة",
+        "desc": "كيك شوكولاتة بالصوص",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 88,
+        "name": "تشيز كيك",
+        "desc": "تشيز كيك بالفراولة",
+        "price": 2000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 89,
+        "name": "تيراميسو",
+        "desc": "تيراميسو إيطالي",
+        "price": 2500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 90,
+        "name": "كريم كراميل",
+        "desc": "كريم كراميل بالفانيليا",
+        "price": 1200,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 91,
+        "name": "آيس كريم فانيليا",
+        "desc": "آيس كريم فانيليا",
+        "price": 800,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1560008581-09826d1de69e?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 92,
+        "name": "آيس كريم شوكولاتة",
+        "desc": "آيس كريم شوكولاتة",
+        "price": 800,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 93,
+        "name": "آيس كريم فراولة",
+        "desc": "آيس كريم فراولة",
+        "price": 800,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 94,
+        "name": "سندويش آيس كريم",
+        "desc": "سندويش آيس كريم",
+        "price": 1000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 95,
+        "name": "كريب نوتيلا",
+        "desc": "كريب بالنوتيلا والموز",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 96,
+        "name": "كريب فراولة",
+        "desc": "كريب بالفراولة والشوكولاتة",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 97,
+        "name": "بسبوسة",
+        "desc": "بسبوسة بالقطر والمكسرات",
+        "price": 1000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 98,
+        "name": "معمول",
+        "desc": "معمول بالتمر أو الجوز",
+        "price": 1200,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1519676867240-f03562e64548?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 99,
+        "name": "غريبة",
+        "desc": "غريبة بالفستق",
+        "price": 1000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 100,
+        "name": "حلوى الجبن",
+        "desc": "حلوى الجبن بالقطر",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 101,
+        "name": "فطيرة تفاح",
+        "desc": "فطيرة تفاح بالقرفة",
+        "price": 1500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 102,
+        "name": "بودينغ شوكولاتة",
+        "desc": "بودينغ شوكولاتة",
+        "price": 1000,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 103,
+        "name": "جيلي فواكه",
+        "desc": "جيلي فواكه مشكلة",
+        "price": 800,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 104,
+        "name": "كنافة بالقشطة",
+        "desc": "كنافة بالقشطة والقطر",
+        "price": 2500,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=400&h=300&fit=crop"
+    },
+    {
+        "id": 105,
+        "name": "موس شوكولاتة",
+        "desc": "موس شوكولاتة فرنسي",
+        "price": 1800,
+        "category": "dessert",
+        "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"
+    }
 ];
 const defaultStore = {
     "name": "مطعم يزن",
