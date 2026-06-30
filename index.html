@@ -6,7 +6,7 @@
   <title>توصل سريع - لوحة متجر</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}body{font-family:Segoe UI,Tahoma,Arial,sans-serif;background:#f5f5f5;padding-bottom:120px;direction:rtl}
-    .header{background:#e74c3c;color:#fff;padding:14px;text-align:center;position:sticky;top:0;z-index:100}.nav{display:flex;gap:10px;padding:10px;overflow:auto;background:#fff;border-bottom:1px solid #ddd}
+    .header{color:#fff;padding:0;text-align:center;position:sticky;top:0;z-index:100;min-height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-size:cover;background-position:center;background-repeat:no-repeat;overflow:hidden}.nav{display:flex;gap:10px;padding:10px;overflow:auto;background:#fff;border-bottom:1px solid #ddd}
     .nav-btn{padding:8px 14px;border-radius:20px;border:0;background:#ecf0f1;color:#333;cursor:pointer}
     .nav-btn.active{background:#e74c3c;color:#fff}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
     .product-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;flex-direction:column}
@@ -35,7 +35,7 @@
 <body>
 
   <div id="storeView">
-    <div class="header"><h1>🍽️ مطعم ابو يزن  :</h1><div id="storeSubtitle" style="font-size:12px;opacity:.9">أطلب الآن عبر الواتساب</div></div>
+    <div class="header" id="storeHeader" style="background-color:#e74c3c"><h1>🍽️ مطعم ابو يزن  :</h1><div id="storeSubtitle" style="font-size:12px;opacity:.9;text-shadow:0 1px 3px rgba(0,0,0,.6)">أطلب الآن عبر الواتساب</div></div>
 
     <div class="store-info">
       <h2 id="storeName">متجر الطعام</h2>
@@ -56,6 +56,18 @@
 
   <!-- Admin -->
   <div id="adminPanel" class="admin-panel">
+    <div class="admin-section">
+      <h3>🖼️ صورة الهيدر (الشريط العلوي)</h3>
+      <p style="font-size:13px;color:#666;margin-bottom:8px">اختر صورة من معرض هاتفك لتحل محل الشريط البرتقالي في أعلى المتجر</p>
+      <label class="file-label" onclick="document.getElementById('headerImageFile').click()">📷 اختيار صورة الهيدر</label>
+      <input id="headerImageFile" type="file" accept="image/*" style="display:none" onchange="previewHeaderImage(this)">
+      <img id="headerImagePreview" class="img-preview" style="display:none;width:100%;height:120px;object-fit:cover">
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button onclick="saveHeaderImage()" style="flex:1;background:#27ae60;color:#fff;padding:10px;border-radius:8px;border:0;cursor:pointer">💾 حفظ الصورة</button>
+        <button onclick="removeHeaderImage()" style="flex:1;background:#e74c3c;color:#fff;padding:10px;border-radius:8px;border:0;cursor:pointer">🗑️ إزالة الصورة</button>
+      </div>
+    </div>
+
     <button onclick="showStore()" style="background:#95a5a6;color:#fff;padding:10px;border-radius:8px;border:0;margin-bottom:12px;cursor:pointer">← العودة للمتجر</button>
 
     <div class="admin-section">
@@ -721,6 +733,7 @@ let storeSettings = {};
 let cart = [];
 let currentCategory = 'all';
 let currentImageBase64 = null;
+let currentHeaderImageBase64 = null;
 
 /* ======= تهيئة ======= */
 function init(){
@@ -740,6 +753,8 @@ function loadData(){
   const savedCart = localStorage.getItem('shop_cart_v1');
   cart = savedCart ? JSON.parse(savedCart) : [];
   updateStoreDisplay();
+  const savedHeader = localStorage.getItem('shop_header_image_v1');
+  if(savedHeader) applyHeaderImage(savedHeader);
 }
 
 /* ======= واجهة المتجر ======= */
@@ -855,6 +870,48 @@ function sendCartOrder(){
   message += `%0A⏰ ${new Date().toLocaleString('ar-SY')}`;
   window.open(`https://wa.me/${phone}?text=${message}`,'_blank');
   cart = []; saveCartData(); updateCartUI(); closeCartModal(); showToast('📱 تم فتح الواتساب لإرسال الطلب!');
+}
+
+/* ======= صورة الهيدر ======= */
+function previewHeaderImage(input){
+  if(input.files && input.files[0]){
+    const file = input.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e){
+      currentHeaderImageBase64 = e.target.result;
+      const img = document.getElementById('headerImagePreview');
+      img.src = currentHeaderImageBase64;
+      img.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+}
+function applyHeaderImage(base64){
+  const header = document.getElementById('storeHeader');
+  if(base64){
+    header.style.backgroundImage = 'url('+base64+')';
+    header.style.backgroundColor = 'transparent';
+  } else {
+    header.style.backgroundImage = 'none';
+    header.style.backgroundColor = '#e74c3c';
+  }
+}
+function saveHeaderImage(){
+  if(currentHeaderImageBase64){
+    localStorage.setItem('shop_header_image_v1', currentHeaderImageBase64);
+    applyHeaderImage(currentHeaderImageBase64);
+    showToast('✅ تم حفظ صورة الهيدر');
+  } else {
+    showToast('⚠️ اختر صورة أولاً');
+  }
+}
+function removeHeaderImage(){
+  localStorage.removeItem('shop_header_image_v1');
+  currentHeaderImageBase64 = null;
+  document.getElementById('headerImageFile').value = '';
+  document.getElementById('headerImagePreview').style.display = 'none';
+  applyHeaderImage(null);
+  showToast('🗑️ تمت إزالة صورة الهيدر');
 }
 
 /* ======= إدارة المنتجات (صورة من المعرض) ======= */
